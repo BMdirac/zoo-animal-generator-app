@@ -17,7 +17,7 @@ app.get('/animalname', async(request, response) => {
         {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'a7682c7b38msh7c08bc85299b610p1452d7jsn957767c45637',
+                'X-RapidAPI-Key': api-Key,
                 'X-RapidAPI-Host': 'zoo-animals-api.p.rapidapi.com'
             },
         }
