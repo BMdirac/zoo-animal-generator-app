@@ -1,11 +1,24 @@
 console.log('script.js loaded');
 
 //********************** Learning phase 2 *************************************/
-getAnimalName();
+document.querySelector('#btnLoad').addEventListener('click', () => {
+    getAnimalName();
+    getAnimalImage();
+});
 
+// to request animal name from index.js (server side) for display on the browser
 async function getAnimalName() {
     const response = await fetch('/animalname');
     const data = await response.json();
-    console.log(data);
+    let animalName = data[0].join('');
+    console.log(animalName);
+}
+
+// to request animal image from index.js (server side) for display on the browser
+async function getAnimalImage() {
+    const response = await fetch('/animalimage');
+    const data = await response.json();
+    let animalImage = data.value[Math.floor(Math.randome() * data.value.length)].thumbnailUrl;
+    console.log(animalImage);
 }
 
