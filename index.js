@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -9,6 +10,8 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
 
+const api_key = process.env.API_KEY;
+
 //********************** Learning phase 2 *************************************/
 // async is used so we can wait for the process to get completed
 // to get animal name
@@ -18,7 +21,7 @@ app.get('/animalname', async(request, response) => {
         {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': api-key,
+                'X-RapidAPI-Key': api_key,
                 'X-RapidAPI-Host': 'zoo-animals-api.p.rapidapi.com'
             },
         }
@@ -36,7 +39,7 @@ app.get('/animalimage', async(request, response) => {
         {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'a7682c7b38msh7c08bc85299b610p1452d7jsn957767c45637',
+                'X-RapidAPI-Key': api_key,
                 'X-RapidAPI-Host': 'bing-image-search1.p.rapidapi.com'
             },
         }

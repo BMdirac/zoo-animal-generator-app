@@ -18,7 +18,19 @@ async function getAnimalName() {
 async function getAnimalImage() {
     const response = await fetch('/animalimage');
     const data = await response.json();
-    let animalImage = data.value[Math.floor(Math.randome() * data.value.length)].thumbnailUrl;
-    console.log(animalImage);
+    let animalImage = data.value[Math.floor(Math.random() * data.value.length)];
+    let animalImageUrl = animalImage.thumbnailUrl;
+    let animalAlt = animalImage.name; 
+    console.log(animalImage, animalAlt);
+
+    // Creating element in javascript (for the image)
+    if(document.querySelector('#animalImage') !== null) {
+        document.querySelector('#animalImage').remove(); 
+    }
+
+    let img = document.createElement('img');
+    img.src = animalImageUrl;
+    img.alt = animalAlt;  
+    document.querySelector('body').appendChild(img);
 }
 
