@@ -1,4 +1,7 @@
-require('dotenv').config();
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -17,7 +20,7 @@ const api_key = process.env.API_KEY;
 // to get animal name
 app.get('/animalname', async(request, response) => {
     const fetchApi = await fetch(
-		'https://zoo-animals-api.p.rapidapi.com/animals/rand/10',
+		'https://zoo-animals-api.p.rapidapi.com/animals/rand/20',
         {
             method: 'GET',
             headers: {

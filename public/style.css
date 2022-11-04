@@ -8,6 +8,39 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    background: center / auto url('public/forest.jpg');
+    color: #101010;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.generator {
+  padding: 2rem;
+  text-align: center;
+}
+
+#animalImage {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+button {
+    background: blue;
+    border: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 150ms ease-in-out;
+    cursor: pointer;
+    text-transform: uppercase;
 }

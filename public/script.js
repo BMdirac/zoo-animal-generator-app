@@ -29,8 +29,9 @@ async function getAnimalImage() {
     }
 
     let img = document.createElement('img');
+    img.id = 'animalImage';
     img.src = animalImageUrl;
     img.alt = animalAlt;  
-    document.querySelector('body').appendChild(img);
+    document.querySelector('.generator').appendChild(img);
 }
 
