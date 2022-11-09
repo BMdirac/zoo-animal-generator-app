@@ -14,7 +14,7 @@
     <!-- 4. index.js file is created -->
     <!-- 5. public folder is created -->
     <!-- note that: here script.js is called client side js -->
-    <!-- 1 - 5 is used to get the website runing. this is finally achieve using: npm run dev-->
+    <!-- 1 - 5 is used to get the website running. this is finally achieve using: npm run dev-->
 
                                 <!---------- Learning phase 2 (all about getting the api data) ----------->   
     <!-- note: "index.js" (server side) use get request to get data from api then
@@ -25,5 +25,19 @@
     <!-- 7. .env file is created manually and is install using: npm install dotenv --save-dev;
         .env is used to hide our api key 
     -->
+
+    <!-- Revision -->
+    <!-- 
+        ************************************
+        app.get() is used in index.js (server side)
+        but not in script.js (client side)
+
+        ************************************
+        const response = await fetch('/animalname'); is used 
+        in script.js which is used to access the index.js data
+        gotten from the api. 
+        From this, it is clear that the data is access through
+        the url "/animalname".
+     -->
 </body>
 </html> 
